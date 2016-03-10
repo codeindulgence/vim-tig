@@ -1,7 +1,18 @@
-vim-tig
+Vim Tig
 =======
-Simple plugin to call tig from inside vim.
+Love [Tig](https://github.com/jonas/tig)? Me too!  
+Love Vim? OMG we're totes the same!  
+So here's a simple plugin to make calling tig in vim easy peasy.  
 It's teh handies!
+
+Requirements
+------------
+Neovim. This plugin uses Neovim's built in terminal; therefore it will crash
+and burn on classic Vim. Classic support may be added if either
+
+1. enough people want it
+2. I go back to classic Vim
+3. someone else does it :)
 
 Installation
 ------------
@@ -9,7 +20,8 @@ Use your most favouritest plugin manager.
 
 Usage
 -----
-Simply run `:Tig` or bind a key to it, e.g.:
+Simply run `:Tig`  
+or bind a key to it, e.g.:
 ```
 map <C-G> :Tig<Cr>
 ```
