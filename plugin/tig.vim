@@ -1,4 +1,8 @@
 if has('nvim')
+  if !exists('g:tig_command')
+    let g:tig_command = 'status'
+  endif
+
   function! Tig()
     let callback = {}
 
@@ -7,7 +11,7 @@ if has('nvim')
     endfunction
 
     new
-    call termopen('tig status', callback)
+    call termopen('tig ' . g:tig_command, callback)
     startinsert
   endfunction
 

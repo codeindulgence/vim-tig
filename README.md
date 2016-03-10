@@ -26,6 +26,10 @@ or bind a key to it, e.g.:
 map <C-G> :Tig<Cr>
 ```
 
+Configuration
+-------------
+Tig command to run: `let g:tig_command = 'status'`
+
 
 Contributing
 ------------
