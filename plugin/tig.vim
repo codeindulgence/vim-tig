@@ -7,11 +7,15 @@ if has('nvim')
     let g:tig_command = 'status'
   endif
 
+  if !exists('g:tig_on_exit')
+    let g:tig_on_exit = 'bw!'
+  endif
+
   function! Tig()
     let callback = {}
 
     function! callback.on_exit()
-      exec 'bw!'
+      exec g:tig_on_exit
     endfunction
 
     new
