@@ -3,8 +3,8 @@ if has('nvim')
     let g:tig_executable = 'tig'
   endif
 
-  if !exists('g:tig_command')
-    let g:tig_command = 'status'
+  if !exists('g:tig_default_command')
+    let g:tig_default_command = 'status'
   endif
 
   if !exists('g:tig_on_exit')
@@ -15,7 +15,7 @@ if has('nvim')
     let g:tig_open_command = 'new'
   endif
 
-  function! Tig()
+  function! Tig(...)
     let callback = {}
 
     function! callback.on_exit()
@@ -23,9 +23,13 @@ if has('nvim')
     endfunction
 
     exec g:tig_open_command
-    call termopen(g:tig_executable . ' ' . g:tig_command, callback)
+    if a:0 > 0
+      call termopen(g:tig_executable . ' ' . a:1, callback)
+    else
+      call termopen(g:tig_executable . ' ' . g:tig_default_command, callback)
+    endif
     startinsert
   endfunction
 
-  command! Tig call Tig()
+  command! -nargs=? Tig call Tig(<f-args>)
 endif

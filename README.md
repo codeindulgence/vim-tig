@@ -26,10 +26,15 @@ or bind a key to it, e.g.:
 map <C-G> :Tig<Cr>
 ```
 
+Pass tig commands:
+```
+:Tig show
+```
+
 Configuration
 -------------
 Tig executable: `let g:tig_executable = 'tig'`
-Tig command to run: `let g:tig_command = 'status'`
+Tig command to run: `let g:tig_default_command = 'status'`
 Vim command to run on tig exit: `let g:tig_on_exit = 'bw!'`
 Vim command before opening terminal: `let g:tig_open_command = 'new'`
 
