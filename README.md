@@ -31,7 +31,7 @@ Configuration
 Tig executable: `let g:tig_executable = 'tig'`
 Tig command to run: `let g:tig_command = 'status'`
 Vim command to run on tig exit: `let g:tig_on_exit = 'bw!'`
-
+Vim command before opening terminal: `let g:tig_open_command = 'new'`
 
 Contributing
 ------------

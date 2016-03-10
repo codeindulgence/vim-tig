@@ -11,6 +11,10 @@ if has('nvim')
     let g:tig_on_exit = 'bw!'
   endif
 
+  if !exists('g:tig_open_command')
+    let g:tig_open_command = 'new'
+  endif
+
   function! Tig()
     let callback = {}
 
@@ -18,7 +22,7 @@ if has('nvim')
       exec g:tig_on_exit
     endfunction
 
-    new
+    exec g:tig_open_command
     call termopen(g:tig_executable . ' ' . g:tig_command, callback)
     startinsert
   endfunction
