@@ -31,6 +31,11 @@ Pass tig commands:
 :Tig show
 ```
 
+Show commit log of current file:
+```
+:Tig!
+```
+
 Configuration
 -------------
 Tig executable: `let g:tig_executable = 'tig'`

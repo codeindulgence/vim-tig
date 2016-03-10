@@ -15,21 +15,28 @@ if has('nvim')
     let g:tig_open_command = 'new'
   endif
 
-  function! Tig(...)
-    let callback = {}
+  function! s:tig(bang, ...)
+    let s:callback = {}
+    let current = expand('%')
 
-    function! callback.on_exit()
+    function! s:callback.on_exit()
       exec g:tig_on_exit
     endfunction
 
+    function! s:tigopen(arg)
+      call termopen(g:tig_executable . ' ' . a:arg, s:callback)
+    endfunction
+
     exec g:tig_open_command
-    if a:0 > 0
-      call termopen(g:tig_executable . ' ' . a:1, callback)
+    if a:bang > 0
+      call s:tigopen(current)
+    elseif a:0 > 0
+      call s:tigopen(a:1)
     else
-      call termopen(g:tig_executable . ' ' . g:tig_default_command, callback)
+      call s:tigopen(g:tig_default_command)
     endif
     startinsert
   endfunction
 
-  command! -nargs=? Tig call Tig(<f-args>)
+  command! -bang -nargs=? Tig call s:tig(<bang>0, <f-args>)
 endif
