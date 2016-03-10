@@ -28,6 +28,7 @@ map <C-G> :Tig<Cr>
 
 Configuration
 -------------
+Tig executable: `let g:tig_executable = 'tig'`
 Tig command to run: `let g:tig_command = 'status'`
 
 
