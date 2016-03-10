@@ -1,13 +1,15 @@
-function! Tig()
-  let callback = {}
+if has('nvim')
+  function! Tig()
+    let callback = {}
 
-  function! callback.on_exit()
-    exec 'bw!'
+    function! callback.on_exit()
+      exec 'bw!'
+    endfunction
+
+    new
+    call termopen('tig status', callback)
+    startinsert
   endfunction
 
-  new
-  call termopen('tig status', callback)
-  startinsert
-endfunction
-
-command! Tig call Tig()
+  command! Tig call Tig()
+endif
