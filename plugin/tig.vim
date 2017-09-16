@@ -19,7 +19,7 @@ if has('nvim')
     let s:callback = {}
     let current = expand('%')
 
-    function! s:callback.on_exit()
+    function! s:callback.on_exit(id, status, event)
       exec g:tig_on_exit
     endfunction
 
