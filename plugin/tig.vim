@@ -12,7 +12,7 @@ if has('nvim')
   endif
 
   if !exists('g:tig_open_command')
-    let g:tig_open_command = 'new'
+    let g:tig_open_command = 'enew'
   endif
 
   function! s:tig(bang, ...)
