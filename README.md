@@ -54,3 +54,5 @@ Contributing
 Credits
 -------
 [Nick Butler](https://www.codeindulgence.com) <nick@codeindulgence.com>
+
+Additional thanks to [Mizuchi](https://github.com/Mizuchi) for [vim-ranger](https://github.com/Mizuchi/vim-ranger/) which was used as a reference.
