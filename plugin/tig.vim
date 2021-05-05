@@ -35,6 +35,9 @@ if has('nvim')
     else
       call s:tigopen(g:tig_default_command)
     endif
+    setlocal nonumber
+    setlocal norelativenumber
+    setlocal signcolumn=no
     startinsert
   endfunction
 
