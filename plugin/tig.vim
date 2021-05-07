@@ -18,9 +18,11 @@ if has('nvim')
   function! s:tig(bang, ...)
     let s:callback = {}
     let current = expand('%')
+    let s:altfile = expand('#')
 
     function! s:callback.on_exit(id, status, event)
       exec g:tig_on_exit
+      let @# = s:altfile
     endfunction
 
     function! s:tigopen(arg)

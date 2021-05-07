@@ -3,7 +3,6 @@ Vim Tig
 Love [Tig](https://github.com/jonas/tig)? Me too!  
 Love Vim? OMG we're totes the same!  
 So here's a simple plugin to make calling tig in vim easy peasy.  
-It's teh handies!
 
 Requirements
 ------------
@@ -16,7 +15,7 @@ and burn on classic Vim. Classic support may be added if either
 
 Installation
 ------------
-Use your most favouritest plugin manager.
+Use your favourite plugin manager.
 
 Usage
 -----
