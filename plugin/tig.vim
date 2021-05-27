@@ -40,6 +40,7 @@ if has('nvim')
     setlocal nonumber
     setlocal norelativenumber
     setlocal signcolumn=no
+    setlocal filetype=tig
     startinsert
   endfunction
 
