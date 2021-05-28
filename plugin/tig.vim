@@ -22,7 +22,9 @@ if has('nvim')
 
     function! s:callback.on_exit(id, status, event)
       exec g:tig_on_exit
-      let @# = s:altfile
+      if !empty(s:altfile)
+        let @# = s:altfile
+      endif
     endfunction
 
     function! s:tigopen(arg)
