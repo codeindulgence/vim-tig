@@ -31,14 +31,19 @@ if has('nvim')
       call termopen(g:tig_executable . ' ' . a:arg, s:callback)
     endfunction
 
-    exec g:tig_open_command
-    if a:bang > 0
-      call s:tigopen(current)
-    elseif a:0 > 0
-      call s:tigopen(a:1)
-    else
-      call s:tigopen(g:tig_default_command)
+    let arg = ''
+    if a:0 > 0
+      let arg .= ' ' . a:1
     endif
+    if a:bang > 0
+      let arg .= ' -- ' . current
+    endif
+    if len(arg) == 0
+      let arg = g:tig_default_command
+    endif
+
+    exec g:tig_open_command
+    call s:tigopen(arg)
     setlocal nonumber
     setlocal norelativenumber
     setlocal signcolumn=no

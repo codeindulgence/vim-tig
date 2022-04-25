@@ -35,6 +35,11 @@ Show commit log of current file:
 :Tig!
 ```
 
+Show blame view of current file:
+```
+:Tig! blame
+```
+
 Configuration
 -------------
 Tig executable: `let g:tig_executable = 'tig'`
