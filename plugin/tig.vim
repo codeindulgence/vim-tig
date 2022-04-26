@@ -33,7 +33,10 @@ if has('nvim')
 
     let arg = ''
     if a:0 > 0
-      let arg .= ' ' . a:1
+      let args = a:1
+      let args = substitute(args, '%', current, '')
+      let args = substitute(args, '+', '+' . line('.'), '')
+      let arg .= ' ' . args
     endif
     if a:bang > 0
       let arg .= ' -- ' . current
